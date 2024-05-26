@@ -1,0 +1,341 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+/* ---- Distribución ---- */
+body {
+  text-align: center;
+  color: white;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 2fr 10fr 1fr;
+  grid-template-areas:
+    "nav"
+    "aside"
+    "main"
+    "footer";
+}
+
+.navbar-carLogo img{
+    width: 24px;
+    height: 24px;
+    margin-top: 5px;
+    padding: 5px -5px -5px 0px;
+}
+
+.card img{
+    width: 225px;
+    height: 125px;
+}
+
+.card p{
+    color: black;
+}
+
+.buttonVer {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-link {
+    color: #007bff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    border-radius: 3px;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* ---- Componentes ---- */
+
+nav {
+  grid-area: nav;
+  background: #01579b;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: aside;
+  background-color: #e1e2e1;
+  color: black;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #002f6c;
+}
+
+
+nav ul {
+    list-style-type: none;
+  }
+
+/* Estilos para la barra lateral */
+.sidebar {
+    padding: 10px;
+}
+
+.ordenarPor {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.select-container {
+    position: relative;
+}
+
+/* Estilos para el select */
+.select-container select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    padding: 8px 30px 8px 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.select-container::before {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.card {
+  box-shadow: 1px 1px 5px 1px #e1e2e1;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.card button {
+    background: #01579b;
+  }
+  
+  .autos {
+    overflow-y: scroll;
+    height: 65vh;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 15px;
+  }
+  
+  .icon-rrss img{
+      width: 24px;
+      height: 24px;
+      margin-top: 10px;
+  }
+
+
+/* ---- Medias ---- */
+
+
+@media screen and (min-width: 576px) {
+  body {
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-areas:
+      "nav nav"
+      "aside main"
+      "footer footer";
+  }
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    grid-template-columns: 15% 85%;
+    grid-template-areas:
+      "nav aside"
+      "nav main"
+      "footer main";
+  }
+}
+
+@media screen and (min-width: 992px) {}
+
+  .btn {
+    display: none;
+  }
+  
+  @media screen and (max-width: 575px) {
+    .btn {
+      display: inline-block;
+      background-color: #01579b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+@media screen and (min-width: 576px) {
+  .autos {
+    height: 70vh;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .autos {
+    height: 75vh;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  nav ul li {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav {
+        display: none;
+    }
+
+    .navbar-nav.active {
+        display: block;
+    }
+
+    .navbar-hamburguesa {
+        display: block;
+    }
+}
+
+
+/* Estilos para el botón de hamburguesa */
+.navbar-hamburguesa {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000; /* Encima de otros elementos */
+}
+
+.navbar-icon {
+    display: block;
+    width: 30px;
+    height: 20px;
+    background-image: url('../img/menu-hamburguesa.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: -9999px; /* Ocultamos el texto dentro del div */
+}
+
+/* Styles para Nav */
+.navbar-nav li {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #1d5ab4;
+}
+
+.navbar-nav li:last-child {
+    border-bottom: none;
+}
+
+/* Styles para disp. pequeños */
+@media (max-width: 576px) {
+    .navbar-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-nav.active {
+        display: block;
+    }
+
+    .navbar-hamburguesa {
+        display: block;
+    }
+
+    /* Oculta los elementos del menú en dispositivos móviles */
+    .navbar-nav li {
+        display: none;
+    }
+
+    footer {
+        margin-top: 15px;
+    }
+}
+
+/* -- Pantalla Media Opcional --*/
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .navbar-nav li {
+        flex-direction: row-reverse;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+    .navbar {
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: flex-start; 
+        padding: 10px; 
+    }
+
+    .navbar-carLogo {
+        order: 1; 
+    }
+
+    .navbar-nav {
+        order: 2; 
+        display: flex; 
+        flex-direction: row; 
+        justify-content: flex-end; 
+    }
+
+    .navbar-nav li {
+        margin-left: 10px; 
+    }
+}
+
